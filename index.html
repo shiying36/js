@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- 加载 Mixpanel 依赖 + 你的 JS 文件 -->
+  <!-- 1. 先加载 Mixpanel SDK（必须在你的 JS 前） -->
   <script src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
-  <!-- 替换成你 GitHub Raw 的 JS 链接 -->
+  <!-- 2. 加载你的 JS 文件（确保路径正确） -->
   <script src="https://raw.githubusercontent.com/shiying36/js/main/productSchool.js"></script> 
 </head>
 <body>
   <h1>数据正在发送到 Mixpanel...</h1>
-  <!-- 若 JS 里有主动触发函数（比如 simulateEvents()），可在这里调用 -->
+  
+  <!-- 关键修改：明确调用 JS 中的发送函数 -->
   <script>
-    // 假设你 JS 里有 main() 函数负责生成事件
-    main(); 
+    // 假设你的 JS 中有 trackButtonClick() 函数（如之前示例）
+    // 直接调用，确保页面加载时执行
+    trackButtonClick(); 
+    
+    // 备选方案：如果 JS 中有 main() 函数，调用它
+    // main(); 
   </script>
 </body>
 </html>
